@@ -1,0 +1,3 @@
+#useDynLib(SALMON, .registration = TRUE)
+importFrom("stats", "runif")
+export(EstimateSigActivity, CalculateSigExpectancy)

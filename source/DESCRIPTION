@@ -1,0 +1,17 @@
+Package: SALMON
+Title: Signature Activity and Expectancy
+Version: 0.0.1
+Date: 2022-09-20
+Authors@R: c(person(given="DongHyuk", family="Lee", role="aut", email="dhyuklee@pusan.ac.kr"),
+             person(given="Bin", family="Zhu", role="aut", email="bin.zhu@nih.gov"),
+             person(given="Bill", family="Wheeler", role="cre", email="wheelerb@imsweb.com"))
+Description: To estimate signature activities and calculate signature expectancy.
+Imports: stats
+Depends: R (>= 4.1.0)
+License: GPL-2
+NeedsCompilation: no
+Packaged: 2022-09-20 17:49:44 UTC; wheelerwi
+Author: DongHyuk Lee [aut],
+  Bin Zhu [aut],
+  Bill Wheeler [cre]
+Maintainer: Bill Wheeler <wheelerb@imsweb.com>
