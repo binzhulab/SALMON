@@ -25,9 +25,9 @@
 Donghyuk Lee <dhyuklee@pusan.ac.kr> and Bin Zhu <bin.zhu@nih.gov>
 }
 \examples{
-    data(data, package="SALMON")
+    data(SimData, package="SALMON")
 
-    CalculateSigExpectancy(L, W, H)
+    CalculateSigExpectancy(SimData$L, SimData$TrueW_TMB, SimData$TrueH)
 }
 \keyword{ mutational signatures } 
 \seealso{ \code{\link{EstimateSigActivity}} }

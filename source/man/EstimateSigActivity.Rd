@@ -28,10 +28,11 @@
 Donghyuk Lee <dhyuklee@pusan.ac.kr> and Bin Zhu <bin.zhu@nih.gov>
 }
 \examples{
-    data(data, package="SALMON")
+    data(SimData, package="SALMON")
 
-    EstimateSigActivity(V, L, W)
-
+  \dontrun{
+    EstimateSigActivity(SimData$V, SimData$L, SimData$W_TMB)
+  } 
 }
 \keyword{ mutational signatures } 
 \seealso{ \code{\link{CalculateSigExpectancy}} }
