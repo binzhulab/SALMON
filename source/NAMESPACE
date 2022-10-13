@@ -1,3 +1,5 @@
-#useDynLib(SALMON, .registration = TRUE)
-importFrom("stats", "runif")
-export(EstimateSigActivity, CalculateSigExpectancy)
+useDynLib(SALMON, .registration = TRUE)
+importFrom("utils", "data")
+importFrom("stats", "runif", "coef", "filter")
+importFrom("glmnet", "cv.glmnet")
+export(EstimateSigActivity, CalculateSigExpectancy, mappingSignature)
