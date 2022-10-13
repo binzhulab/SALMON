@@ -36,7 +36,7 @@ check_mat_df <- function(x, nm) {
   NULL
 }
 
-check_number <- function(x, nm, min=NULL, pos=FALSE) {
+check_number <- function(x, nm, min=NULL, pos=FALSE, max=NULL) {
 
   if (length(x) != 1) stop(paste0("ERROR: ", nm, " must be a single numeric value"))
   if (!is.null(min) && (x < min)) {
@@ -45,6 +45,10 @@ check_number <- function(x, nm, min=NULL, pos=FALSE) {
   if (pos && (x <= 0)) {
     stop(paste0("ERROR: ", nm, " must be positive"))
   }
+  if (!is.null(max) && (x > max)) {
+    stop(paste0("ERROR: ", nm, " must be less than or equal to ", max))
+  }
+
   NULL
 
 }
