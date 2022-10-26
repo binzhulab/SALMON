@@ -29,8 +29,8 @@ R CMD INSTALL SALMON_0.0.5.tar.gz -l path_to_install_package
 ```
 Alternatively, SALMON_0.0.5.tar.gz (for Unix) or SALMON_0.0.5.zip (for Windows, R version >= 4.1) from the [Github page](https://github.com/binzhulab/SALMON) are available and one may use the following commands:
 ```
-install.packages("SALMON_0.0.5.tar.gz", repos = NULL, type = "source")
-install.packages("SALMON_0.0.5.zip", repos = NULL, type = "win.binary")
+install.packages("./SALMON_0.0.5.tar.gz", repos = NULL, type = "source")
+install.packages("./SALMON_0.0.5.zip", repos = NULL, type = "win.binary")
 ```
 Once the installation is successful, it can be loaded in **R** by calling 
 ```
