@@ -1,5 +1,5 @@
 
-mappingSignature <- function(W_hat, W_ref=NULL, niter=100, cutoff.I2=0.1, min.repeats=80){
+MappingSignature <- function(W_hat, W_ref=NULL, niter=100, cutoff.I2=0.1, min.repeats=80){
   ## Description
   # This function finds a subset of TMB-based catalog SBS signatures whose linear combination approximate 
   # {\it de novo} SBS signatures detected by signeR
@@ -45,7 +45,7 @@ mappingSignature <- function(W_hat, W_ref=NULL, niter=100, cutoff.I2=0.1, min.re
   }
   if (!is.null(reg.sig.all)) {
     tab             <- table(reg.sig.all[,2])
-    sig_found       <- data.frame(COSMIC = names(tab), freq = as.numeric(tab))
+    sig_found       <- data.frame(Reference = names(tab), freq = as.numeric(tab))
     tmp             <- sig_found[, "freq", drop=TRUE] >= min.repeats
     tmp[is.na(tmp)] <- FALSE
     sig_found       <- sig_found[tmp, , drop=FALSE] 

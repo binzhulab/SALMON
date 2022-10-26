@@ -3,7 +3,7 @@ CalculateSigExpectancy <- function(L, W, H) {
   check_L_W_H(L, W, H) 
 
   N   <- ncol(H)
-  ret <- sigExp_setReturn(W, H)
+  ret <- sigExp_setReturn(L, W, H)
 
   if (!is.matrix(L)) L <- as.matrix(L)
   if (!is.matrix(W)) W <- as.matrix(W)
@@ -18,17 +18,21 @@ CalculateSigExpectancy <- function(L, W, H) {
 
 }
 
-sigExp_setReturn <- function(W, H) {
+sigExp_setReturn <- function(L, W, H) {
 
   N   <- ncol(H)
   K   <- ncol(W)
   ret <- matrix(data=NA, nrow=K, ncol=N)
 
-  tmp <- colnames(W)
-  if (length(tmp) == K) rownames(ret) <- tmp
-  tmp <- colnames(H)
-  if (length(tmp) == N) colnames(ret) <- tmp
+  nms <- colnames(L)
+  if (is.null(nms)) nms <- colnames(H) 
+  if (is.null(nms)) nms <- paste0("Sample", 1:N)
+  colnames(ret) <- nms
 
+  nms <- colnames(W)
+  if (is.null(nms)) nms <- paste0("deNovo", LETTERS[1:K])
+  rownames(ret) <- nms
+  
   ret
 
 }
@@ -74,10 +78,25 @@ estSigAct_main <- function(V, L, W, op) {
                        PACKAGE="SALMON")
 
   ret_H  <- matrix(tmp$ret_H, nrow=k, ncol=n, byrow=TRUE)
+  ret_H  <- setNames_H(ret_H, V, L, W)
   ret_ll <- tmp$ret_ll
   conv   <- tmp$ret_conv
   list(H=ret_H, loglike=ret_ll, converged=conv)
 
+}
+
+setNames_H <- function(H, V, L, W) {
+
+  nms <- colnames(V)
+  if (is.null(nms)) nms <- colnames(L)
+  if (is.null(nms)) nms <- paste0("Sample", 1:ncol(V))
+  colnames(H) <- nms
+ 
+  nms <- colnames(W)
+  if (is.null(nms)) nms <- paste0("deNovo", LETTERS[1:ncol(W)])
+  rownames(H) <- nms
+ 
+  H
 }
 
 EstimateSigActivity_R <- function(V, L, W, n.start=50, iter.max=5000, eps=1e-5) {
