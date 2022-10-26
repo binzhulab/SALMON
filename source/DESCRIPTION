@@ -1,11 +1,11 @@
 Package: SALMON
 Title: SALMON (Signature Analyzer for Low Mutation cOuNts)
-Version: 0.0.4
-Date: 2022-10-13
+Version: 0.0.5
+Date: 2022-10-25
 Authors@R: c(person(given="DongHyuk", family="Lee", role="aut", email="dhyuklee@pusan.ac.kr"),
              person(given="Bin", family="Zhu", role="aut", email="bin.zhu@nih.gov"),
              person(given="Bill", family="Wheeler", role="cre", email="wheelerb@imsweb.com"))
-Description: To perform mutational signature analysis for targeted sequenced tumors.
+Description: This package is created to perform mutational signature analysis for targeted sequenced tumors. Unlike the canonical analysis of mutational signatures, SALMON factorizes the mutation counts matrix into a panel context matrix (measuring the size of the targeted sequenced genome for each tumor in the unit of million base pairs (Mb)), a signature profile matrix, and a signature activity matrix. SALMON also calculates the expected number of mutations attributed by a signature, namely signature expectancy, for each targeted sequenced tumor.
 Imports: stats, glmnet
 Depends: R (>= 4.1.0)
 License: GPL-2
