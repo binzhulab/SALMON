@@ -23,7 +23,7 @@ if (!requireNamespace("devtools", quietly = TRUE))
 	install.packages("devtools")
 devtools::install_github("binzhulab/SALMON/source")
 ```
-Alternatively, download the package and follow the steps below. Download SALMON_0.0.5.tar.gz (for Unix) or SALMON_0.0.5.zip (for Windows, R version >= 4.1). To install SALMON on Unix, enter the command (without the quotes) from a Unix prompt:
+Alternatively, download the package and follow the steps below. Download SALMON_0.0.5.tar.gz (for Unix) or SALMON_0.0.5.zip (for Windows, R version >= 4.1). To install SALMON on Unix, enter the command from a Unix prompt:
 ```
 R CMD INSTALL SALMON_0.0.5.tar.gz -l path_to_install_package
 ```
@@ -32,7 +32,7 @@ Alternatively, SALMON_0.0.5.tar.gz (for Unix) or SALMON_0.0.5.zip (for Windows, 
 install.packages("SALMON_0.0.5.tar.gz", repos = NULL, type = "source")
 install.packages("SALMON_0.0.5.zip", repos = NULL, type = "win.binary")
 ```
-Once the installation is successful, it can be loaded on **R** by calling 
+Once the installation is successful, it can be loaded in **R** by calling 
 ```
 library(SALMON)
 ```
