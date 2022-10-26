@@ -13,7 +13,7 @@ This package is created to perform mutational signature
   by a signature, namely signature expectancy, 
   for each targeted sequenced tumor.
 
-For more information please refer to the [user guide](https://github.com/binzhulab/SALMON/blob/main/SALMON-manual.pdf).
+For more information please refer to the [user guide](https://github.com/binzhulab/SALMON/blob/main/User_Guide_SALMON.pdf).
 <br/>
 
 ### Installation
